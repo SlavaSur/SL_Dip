@@ -1,0 +1,41 @@
+{% extends 'SuperLeague/sample.html' %}
+{% block title %}Расписание матчей{% endblock %}
+{% block body %}
+        <script>
+          async function handleGenerareBtn(b) {
+          await fetch('http://127.0.0.1:8000/api/turs/gamegen')
+
+             window.location.reload()
+            //console.log('CLick', body)
+        }
+        </script>
+    <div class="gs">
+    <h1>Расписание матчей</h1>
+    <button onclick="handleGenerareBtn()">Следующий тур</button>
+    <table class="t">
+      <colgroup>
+    <col span="2" style="background:#57c414">
+    <col span="2" style="background-color:#2d87c7">
+  </colgroup>
+    <tr>
+        <th>№</th>
+        <th>Хозяева</th>
+        <th>Голы Хозяева</th>
+        <th>Голы Гости</th>
+        <th>Гости</th>
+    </tr>
+        {% for i in tour %}
+
+    <tr>
+        <td>  <h3>{{ forloop.counter }} </h3> </td>
+        <td>  <h3>{{ i.home.club_name }} </h3> </td>
+        <td>  <h3>{{ i.goal_home }} </h3> </td>
+        <td>  <h3>{{ i.goal_away }} </h3> </td>
+        <td>  <h3>{{ i.away.club_name }} </h3> </td>
+
+
+    </tr>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'SuperLeague/sample.html' %}
+{% block title %}Добро пожаловать в Суперлигу{% endblock %}
+{% block body %}
+         <script>
+         async function handleGenerareBtn(e) {
+          await fetch('http://127.0.0.1:8000/api/turs/generate')
+
+             window.location.reload()
+            //console.log('CLick', body)
+        }
+        </script>
+    <button onclick="handleGenerareBtn()"><p><a href="./tours">Начать чемпионат</a></p></button>
+    <div class="gs">
+    <h1>Добро пожаловать в Суперлигу</h1>
+    <table class="t">
+      <colgroup>
+    <col span="3" style="background:#57c414">
+    <col style="background-color:#2d87c7">
+  </colgroup>
+    <tr>
+        <th>N</th>
+        <th>Клуб</th>
+        <th>Страна</th>
+        <th>Рейтинг</th>
+    </tr>
+        {% for i in club %}
+
+    <tr>
+        <td>  <h3>{{ forloop.counter }} </h3> </td>
+        <td>  <h3>{{ i.club_name }} </h3> </td>
+        <td>  <h3>{{ i.coutry }} </h3> </td>
+        <td>  <h3>{{ i.rating }} </h3> </td>
+
+
+    </tr>
+        {% endfor %}
+    </table>
+
+    </div>
+{% endblock %}

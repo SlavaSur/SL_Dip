@@ -1,0 +1,33 @@
+{% extends 'SuperLeague/sample.html' %}
+{% block title %}Турнирная таблица{% endblock %}
+{% block body %}
+    <div class="gs">
+    <h1>Турнирная таблица</h1>
+    <table class="t">
+      <colgroup>
+    <col span="2" style="background:#57c414">
+    <col span="2" style="background-color:#2d87c7">
+  </colgroup>
+    <tr>
+        <th>№</th>
+        <th>Клуб</th>
+        <th>Игры</th>
+        <th>Разница мячей</th>
+        <th>Очки</th>
+
+    </tr>
+        {% for data in table %}
+    <tr>
+    <td>  <h3>{{ forloop.counter }} </h3> </td>
+     <td>  <h3>{{ data.clubs }} </h3> </td>
+        <td>  <h3>{{ data.matches }} </h3> </td>
+        <td>  <h3>{{ data.goal_difference }} </h3> </td>
+        <td>  <h3>{{ data.points }} </h3> </td>
+
+
+
+    </tr>
+        {% endfor %}
+    </table>
+    </div>
+{% endblock %}
