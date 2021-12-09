@@ -13,4 +13,4 @@ class TourAdmin(admin.ModelAdmin):
 
 @admin.register(Turnament_table)
 class Turnament_tableAdmin(admin.ModelAdmin):
-    list_display = ('clubs','matches','goal_difference', 'points')
+     list_display = ('clubs','matches','goal_difference', 'points')
