@@ -3,13 +3,13 @@
 {% block body %}
          <script>
          async function handleGenerareBtn(e) {
-          await fetch('http://127.0.0.1:8000/api/turs/generate')
+          await fetch('/api/turs/generate/')
 
              window.location.reload()
             //console.log('CLick', body)
         }
         </script>
-    <button onclick="handleGenerareBtn()"><p><a href="./tours">Начать чемпионат</a></p></button>
+    <button onclick="handleGenerareBtn()"><p><a href="/one_tour">Начать чемпионат</a></p></button>
     <div class="gs">
     <h1>Добро пожаловать в Суперлигу</h1>
     <table class="t">

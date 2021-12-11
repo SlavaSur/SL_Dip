@@ -14,8 +14,8 @@
     </tr>
         {% for data in table %}
     <tr>
-    <td>  <h3>{{ forloop.counter }} </h3> </td>
-     <td>  <h3>{{ data.clubs }} </h3> </td>
+        <td>  <h3>{{ forloop.counter }} </h3> </td>
+        <td>  <h3>{{ data.clubs.club_name }} </h3> </td>
         <td>  <h3>{{ data.matches }} </h3> </td>
         <td>  <h3>{{ data.goal_difference }} </h3> </td>
         <td>  <h3>{{ data.points }} </h3> </td>

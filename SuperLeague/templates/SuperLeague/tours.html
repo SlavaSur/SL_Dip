@@ -1,19 +1,9 @@
 {% extends 'SuperLeague/sample.html' %}
 {% block title %}Расписание матчей{% endblock %}
 {% block body %}
-        <script>
-          async function handleGenerareBtn(b) {
-          await fetch('http://127.0.0.1:8000/api/turs/gamegen')
-
-             window.location.reload()
-            //console.log('CLick', body)
-        }
-        </script>
     <div class="gs">
     <h1>Расписание матчей</h1>
-    <button onclick="handleGenerareBtn()">Следующий тур</button>
     <table class="t">
-
     <tr>
         <th>№</th>
         <th>Хозяева</th>

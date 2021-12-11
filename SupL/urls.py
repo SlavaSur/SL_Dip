@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('SuperLeague.urls')),
     path('tours/', include('SuperLeague.urls')),
     path('tables/', include('SuperLeague.urls')),
+    path('one_tour/', include('SuperLeague.urls')),
 ] + static(settings.STATIC_URL, document_root = settings.STATIC_ROOT)

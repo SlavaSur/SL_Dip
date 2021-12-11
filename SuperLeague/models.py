@@ -25,3 +25,13 @@ class Turnament_table(models.Model):
     matches = models.IntegerField(default=0)
     goal_difference = models.IntegerField(default=0)
     points = models.IntegerField(default=0)
+
+class One_tour(models.Model):
+    home = models.ForeignKey(Tour, on_delete=models.CASCADE,related_name='club_tour_h')
+    goal_home = models.IntegerField(default=0)
+    goal_away = models.IntegerField(default=0)
+    away = models.ForeignKey(Tour, on_delete=models.CASCADE,related_name='club_tour_a')
+    # home = models.ForeignKey(Tour, on_delete=models.CASCADE,related_name='club_tour_h')
+    # goal_home = models.ForeignKey(Tour, on_delete=models.CASCADE,related_name='club_goal_h')
+    # goal_away = models.ForeignKey(Tour, on_delete=models.CASCADE,related_name='club_goal_a')
+    # away = models.ForeignKey(Tour, on_delete=models.CASCADE,related_name='club_tour_a')

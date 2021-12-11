@@ -20,11 +20,16 @@ def tour():
 
 #Функция проведения матчей
 def game():
+    One_tour.objects.all().delete()
     shot = [i for i in range(1, 7)]
     matches = []
     matches_one_tour = []
+    club_h = []
+    club_a = []
     for ell in Tour.objects.filter(is_done=False):
         matches.append(ell.id)
+        club_h.append(ell.home)
+        club_a.append(ell.goal_away)
     for i in range(10):
         matches_one_tour.append(matches[i])
     for k in matches_one_tour:
@@ -41,6 +46,7 @@ def game():
             if shot_away == 1:
                 goal_a += 1
         Tour.objects.filter(id=k).update(goal_home = goal_h, goal_away = goal_a, is_done = True)
+        One_tour.objects.create(home=Tour.objects.get(id=k),goal_home=goal_h,goal_away = goal_a,away=Tour.objects.get(id=k))
 
 #Создание турнирной таблицы
 def cr_table ():

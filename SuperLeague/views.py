@@ -37,4 +37,6 @@ def table(request):
     table = Turnament_table.objects.order_by('-points')
     return render(request, 'SuperLeague/table.html', {'table': table})
 
-
+def one_tour(request):
+    one_tour = One_tour.objects.all()
+    return render(request, 'SuperLeague/one_tour.html', {'one_tour': one_tour})
