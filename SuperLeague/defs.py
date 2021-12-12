@@ -4,6 +4,7 @@ from .models import *
 #Функция формирования турнирной сетки
 def tour():
     Tour.objects.all().delete()
+    One_tour.objects.all().delete()
     matches = []
     clubs = []
     for ell in Club.objects.all():
@@ -20,7 +21,6 @@ def tour():
 
 #Функция проведения матчей
 def game():
-    One_tour.objects.all().delete()
     shot = [i for i in range(1, 7)]
     matches = []
     matches_one_tour = []
@@ -32,6 +32,7 @@ def game():
         club_a.append(ell.goal_away)
     for i in range(10):
         matches_one_tour.append(matches[i])
+    One_tour.objects.all().delete()
     for k in matches_one_tour:
         h = 12
         a = 11
